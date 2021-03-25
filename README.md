@@ -1,5 +1,5 @@
 # Tourist Guide
-## Tech
+## Techs
 - Android Jetpack
 - RxJava
 - Glide
@@ -7,3 +7,5 @@
 - Viewmodel
 - LiveData
 - Firebase
+## APIs
+### Triposo
