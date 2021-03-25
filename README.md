@@ -1,12 +1,13 @@
 # Tourist Guide
 ## Techs
-- Android Jetpack
+- Kotlin
+- Android Jetpack (Navigation, ViewModel, LiveData, Coroutines, ...)
 - RxJava
+- Gson
+- Retrofit
+- OkHttp
 - Glide
-- Coroutines
 - Koin
-- Viewmodel
-- LiveData
 - Firebase
 ## APIs
 ### Triposo
