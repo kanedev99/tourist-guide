@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomSheetComment"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/bg_border_dialog">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAvatarUser"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="@dimen/distance_16"
+            android:src="@drawable/avatar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtComment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/distance_8"
+            android:layout_marginEnd="@dimen/distance_8"
+            android:background="@drawable/drawable_border_edt"
+            android:fontFamily="@font/raleway"
+            android:hint="@string/write_your_feedback"
+            android:paddingStart="@dimen/distance_8"
+            android:paddingTop="@dimen/distance_8"
+            android:paddingEnd="@dimen/distance_24"
+            android:paddingBottom="@dimen/distance_8"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_16"
+            app:layout_constraintBottom_toBottomOf="@id/ivAvatarUser"
+            app:layout_constraintEnd_toStartOf="@id/ivSendComment"
+            app:layout_constraintStart_toEndOf="@id/ivAvatarUser"
+            app:layout_constraintTop_toTopOf="@id/ivAvatarUser" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSendComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/distance_8"
+            android:src="@drawable/ic_baseline_send_24"
+            app:layout_constraintBottom_toBottomOf="@id/ivAvatarUser"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivAvatarUser" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCancelComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/distance_8"
+            android:src="@drawable/ic_baseline_keyboard_arrow_down_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

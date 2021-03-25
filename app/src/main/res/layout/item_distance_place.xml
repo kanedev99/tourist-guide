@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="place"
+            type="vinova.kane.touristguide.vo.Place" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/distance_4"
+        android:layout_marginBottom="@dimen/distance_8"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_cover_photo"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                app:loadImage="@{place.images[0]}"
+                android:scaleType="centerCrop"
+                android:src="@drawable/cover_pho"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <TextView
+                android:id="@+id/tv_place_name"
+                style="@style/AppTheme.Text.Header18"
+                android:layout_width="0dp"
+                android:layout_marginHorizontal="@dimen/distance_8"
+                android:layout_marginTop="@dimen/distance_16"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:text="@{place.name}"
+                android:textColor="@color/new_brand_green"
+                app:layout_constraintBottom_toTopOf="@+id/tvSnippet"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_cover_photo"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Reunification Palace" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_marginTop="@dimen/distance_4"
+                android:id="@+id/tvSnippet"
+                style="@style/AppTheme.Text.Body18"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_8"
+                android:layout_marginEnd="@dimen/distance_8"
+                android:maxLines="4"
+                android:text="@{place.snippet}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/iv_cover_photo"
+                app:layout_constraintTop_toBottomOf="@+id/tv_place_name"
+                tools:text="This is a restored 4-floor time warp to the 1960s left largely untouched from the day Saigon fell to the North" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:drawablePadding="@dimen/distance_4"
+                android:backgroundTint="@color/background"
+                android:layout_marginBottom="@dimen/distance_4"
+                android:padding="@dimen/distance_8"
+                android:background="@color/new_brand_green"
+                tools:text="5000"
+                app:loadDistance="@{place.distance}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iv_cover_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_distance" />
+
+            <View
+                android:id="@+id/clickableOverlay"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="?attr/selectableItemBackground"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

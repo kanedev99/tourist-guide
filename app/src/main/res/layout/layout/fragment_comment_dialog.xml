@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:id="@+id/layoutComment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".ui.comment.CommentDialogFragment">
+
+            <LinearLayout
+                android:id="@+id/dialog_tile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/black"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/layoutHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_border_dialog">
+
+                    <TextView
+                        android:id="@+id/tvCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/distance_16"
+                        android:layout_marginTop="@dimen/distance_8"
+                        android:layout_marginBottom="@dimen/distance_8"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/cancel"
+                        android:textColor="@color/second_red"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tvDialogTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/distance_16"
+                        android:layout_marginTop="@dimen/distance_8"
+                        android:layout_marginBottom="@dimen/distance_8"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/feedback"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <TextView
+                        android:id="@+id/tvAdd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="@dimen/distance_16"
+                        android:layout_marginTop="@dimen/distance_8"
+                        android:layout_marginEnd="@dimen/distance_16"
+                        android:layout_marginBottom="@dimen/distance_8"
+                        android:fontFamily="@font/raleway"
+                        android:text="@string/add"
+                        android:textColor="@color/colorGreen"
+                        android:textSize="@dimen/text_size_16" />
+
+                    <View
+                        android:id="@+id/view_line1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@id/tvCancel"
+                        android:background="@color/new_brand_yellow" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListComments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_comment" />
+
+        </LinearLayout>
+</layout>

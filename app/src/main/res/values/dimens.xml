@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="distance_16">16dp</dimen>
+    <dimen name="distance_8">8dp</dimen>
+    <dimen name="distance_4">4dp</dimen>
+    <dimen name="text_size_16">16sp</dimen>
+    <dimen name="padding_4">4dp</dimen>
+    <dimen name="text_size_25">25sp</dimen>
+    <dimen name="text_size_35">35sp</dimen>
+    <dimen name="distance_24">24dp</dimen>
+    <dimen name="distance_32">32dp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="text_size_22">22sp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="activity_horizontal_margin">8dp</dimen>
+    <dimen name="cardCornerRadius">8dp</dimen>
+    <dimen name="cardElevation">8dp</dimen>
+    <dimen name="cardview_horizontal_padding">8dp</dimen>
+    <dimen name="cardview_vertical_padding">8dp</dimen>
+
+    <dimen name="distance_xxxlarge_32">32dp</dimen>
+    <dimen name="distance_large_20">28dp</dimen>
+    <dimen name="distance_48">48dp</dimen>
+
+</resources>

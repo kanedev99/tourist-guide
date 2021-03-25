@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.profile.EditProfileFragment" />
+    </data>
+
+    <ScrollView
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.profile.EditProfileFragment">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cst_top"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:background="@color/mirage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_back"
+                    android:onClick="@{fragment::initEvent}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/distance_8"
+                    android:layout_marginTop="@dimen/distance_8"
+                    android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                    android:tint="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_profile"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/iv_back"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+                <TextView
+                    android:id="@+id/tv_save"
+                    android:onClick="@{fragment::initEvent}"
+                    style="@style/TextViewStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/distance_8"
+                    android:text="@string/save"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/iv_back" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/avatar"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivChangePhoto"
+                    android:onClick="@{fragment::initEvent}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_photo_camera_24"
+                    android:tint="@android:color/white"
+                    app:layout_constraintCircle="@id/iv_avatar"
+                    app:layout_constraintCircleAngle="135"
+                    app:layout_constraintCircleRadius="60dp"
+                    tools:ignore="MissingConstraints" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="@dimen/distance_16" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide_line_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="@dimen/distance_16" />
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_16"
+                android:fontFamily="@font/raleway"
+                android:text="@string/username"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/cst_top" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_username"
+                android:textColorHint="@color/black"
+                android:background="@null"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                tools:text="Kane"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+            <View
+                android:id="@+id/view_line1"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/distance_8"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/edt_username" />
+
+            <TextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                android:fontFamily="@font/raleway"
+                android:text="@string/email"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/view_line1" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:textColorHint="@color/black"
+                android:inputType="none"
+                android:enabled="false"
+                android:background="@null"
+                android:id="@+id/edt_email"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                tools:text="kane@vinova.com.sg"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+            <View
+                android:id="@+id/view_line2"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/distance_8"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/edt_email" />
+
+            <TextView
+                android:id="@+id/tv_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                android:fontFamily="@font/raleway"
+                android:text="@string/phone"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/view_line2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:textColorHint="@color/black"
+                android:background="@null"
+                android:id="@+id/edt_phone"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                tools:text="0373842528"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+            <View
+                android:id="@+id/view_line3"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/distance_8"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/edt_phone" />
+
+            <TextView
+                android:id="@+id/tv_data_of_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                android:fontFamily="@font/raleway"
+                android:text="@string/date_of_birth"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/view_line3" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/edt_date_of_birth"
+                android:onClick="@{fragment::initEvent}"
+                android:inputType="none"
+                android:focusable="false"
+                android:textColorHint="@color/black"
+                android:background="@null"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/distance_8"
+                tools:text="27/03/1999"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/tv_data_of_birth" />
+
+            <View
+                android:id="@+id/view_line4"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/distance_8"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="@id/guide_line_end"
+                app:layout_constraintStart_toStartOf="@id/guide_line_start"
+                app:layout_constraintTop_toBottomOf="@id/edt_date_of_birth" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>
+

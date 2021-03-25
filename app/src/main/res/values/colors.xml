@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="dorado">#555555</color>
+    <color name="white">#FFFFFF</color>
+    <color name="cocoa_brown">#2C2221</color>
+    <color name="mirage">#17202A</color>
+    <color name="pastel_green">#62DC7D</color>
+    <color name="ronchi">#F1C644</color>
+    <color name="summer_green">#8DBF9C</color>
+    <color name="silver">#C4C4C4</color>
+    <color name="hint_of_red">#F8F3F3</color>
+    <color name="portage">#889FEF</color>
+    <color name="background">#8DBF9C</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="gray_0">#393939</color>
+    <color name="gray_1">#6E6E6E</color>
+    <color name="new_brand_green">#53B3B3</color>
+
+    <color name="textInputLayout">#96ffffff</color>
+    <color name="second_red">#F56F62</color>
+    <color name="new_brand_yellow">#FAB51C</color>
+    <color name="colorGreen">#53B3B3</color>
+
+</resources>

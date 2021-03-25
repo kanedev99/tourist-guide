@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.category.CategoryPlaceFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical"
+        tools:context=".ui.home.HomeFragment">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_arrow_back"
+            android:src="@drawable/ic_arrow_back"
+            android:onClick="@{fragment::initEvent}"
+            android:layout_marginStart="@dimen/distance_16"
+            android:layout_marginTop="@dimen/distance_8"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_category_place"
+            tools:text="Hotels"
+            android:textSize="@dimen/text_size_18"
+            android:fontFamily="@font/raleway"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@id/iv_arrow_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:id="@+id/view_line"
+            android:background="@color/black"
+            android:layout_marginTop="@dimen/distance_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_category_place"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"/>
+
+        <ProgressBar
+            android:visibility="visible"
+            android:id="@+id/progress_bar"
+            android:layout_centerInParent="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListPlaces"
+            android:visibility="visible"
+            android:layout_marginTop="@dimen/distance_16"
+            android:layout_marginHorizontal="@dimen/distance_16"
+            app:layout_constraintTop_toBottomOf="@id/view_line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_popular_place" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

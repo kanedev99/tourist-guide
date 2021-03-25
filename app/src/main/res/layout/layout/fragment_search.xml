@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.search.SearchFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.search.SearchFragment">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edtSearch"
+            style="@style/AppTheme.Text.Body18"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/distance_xxxlarge_32"
+            android:layout_marginTop="@dimen/distance_large_20"
+            android:background="@drawable/bg_edit_text_search_blue"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:paddingVertical="@dimen/distance_16"
+            android:paddingStart="@dimen/distance_xxxlarge_32"
+            android:paddingEnd="@dimen/distance_16"
+            android:singleLine="true"
+            android:textColor="@color/new_brand_green"
+            android:textColorHint="@color/new_brand_green"
+            android:textSize="@dimen/text_size_14"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_search_place"
+            android:src="@drawable/ic_search_blue"
+            android:layout_marginEnd="@dimen/distance_8"
+            app:layout_constraintEnd_toEndOf="@id/edtSearch"
+            app:layout_constraintTop_toTopOf="@id/edtSearch"
+            app:layout_constraintBottom_toBottomOf="@id/edtSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_marginHorizontal="@dimen/distance_32"
+            android:layout_marginTop="@dimen/distance_16"
+            app:layout_constraintTop_toBottomOf="@id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

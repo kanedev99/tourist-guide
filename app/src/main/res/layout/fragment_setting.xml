@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.profile.SettingFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.profile.SettingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/view_top_bg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/mirage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_16"
+                android:layout_marginTop="@dimen/distance_32"
+                android:fontFamily="@font/raleway"
+                android:text="@string/setting"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_25"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/iv_avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="@dimen/distance_16"
+                android:layout_marginTop="@dimen/distance_16"
+                android:layout_marginBottom="@dimen/distance_32"
+                android:src="@drawable/avatar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_setting" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_32"
+                android:fontFamily="@font/raleway"
+                tools:text="Kane"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toTopOf="@+id/tv_email"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintTop_toTopOf="@+id/iv_avatar"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_32"
+                android:layout_marginTop="@dimen/distance_8"
+                android:fontFamily="@font/raleway"
+                tools:text="kane@vinova.com.sg"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_avatar"
+                app:layout_constraintStart_toEndOf="@id/iv_avatar"
+                app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_edit_profile"
+                android:onClick="@{fragment::initEvent}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/distance_24"
+                android:background="@drawable/circle_drawable"
+                android:padding="@dimen/padding_4"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintBottom_toBottomOf="@id/iv_avatar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/iv_avatar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_home"
+            android:onClick="@{fragment::initEvent}"
+            style="@style/TextViewProfileStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/distance_16"
+            android:paddingTop="@dimen/distance_16"
+            android:paddingEnd="@dimen/distance_8"
+            android:paddingBottom="@dimen/distance_16"
+            android:text="@string/my_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_top_bg" />
+
+        <View
+            android:id="@+id/view_line1"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:background="@color/silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_home" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_change_password"
+            android:onClick="@{fragment::initEvent}"
+            style="@style/TextViewProfileStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/distance_16"
+            android:paddingTop="@dimen/distance_16"
+            android:paddingEnd="@dimen/distance_8"
+            android:paddingBottom="@dimen/distance_16"
+            android:text="@string/change_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line1" />
+
+        <View
+            android:id="@+id/view_line2"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_change_password" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_change_email"
+            android:onClick="@{fragment::initEvent}"
+            style="@style/TextViewProfileStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/distance_16"
+            android:paddingTop="@dimen/distance_16"
+            android:paddingEnd="@dimen/distance_8"
+            android:paddingBottom="@dimen/distance_16"
+            android:text="@string/change_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line2" />
+
+        <View
+            android:id="@+id/view_line3"
+            android:layout_width="0dp"
+            android:layout_height="3dp"
+            android:background="@color/silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_change_email" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_sign_out"
+            android:onClick="@{fragment::initEvent}"
+            style="@style/TextViewProfileStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/distance_16"
+            android:paddingTop="@dimen/distance_16"
+            android:paddingEnd="@dimen/distance_8"
+            android:paddingBottom="@dimen/distance_16"
+            android:text="@string/sign_out"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view_line3" />
+
+        <View
+            android:id="@+id/view_line4"
+            android:layout_width="0dp"
+            android:layout_height="0.5dp"
+            android:background="@color/silver"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_out" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

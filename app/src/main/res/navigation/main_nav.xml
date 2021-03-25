@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_home"
+        android:id="@+id/homeFragment"
+        android:name="vinova.kane.touristguide.ui.home.HomeFragment"
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_home_to_detail_place"
+            app:destination="@id/placeDetailFragment" />
+
+        <action
+            android:id="@+id/action_home_to_category_place"
+            app:destination="@id/categoryPlaceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="vinova.kane.touristguide.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_to_category_place"
+            app:destination="@id/categoryPlaceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="vinova.kane.touristguide.ui.profile.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_setting_to_edit_profile"
+            app:destination="@id/editProfileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="vinova.kane.touristguide.ui.profile.EditProfileFragment"
+        android:label="fragment_edit_profile"
+        tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/placeDetailFragment"
+        android:name="vinova.kane.touristguide.ui.detail.PlaceDetailFragment"
+        android:label="fragment_place_detail"
+        tools:layout="@layout/fragment_place_detail">
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoryPlaceFragment"
+        tools:layout="@layout/fragment_category_place"
+        android:name="vinova.kane.touristguide.ui.category.CategoryPlaceFragment"
+        android:label="CategoryPlaceFragment" >
+        <action
+            android:id="@+id/action_category_to_detail_place"
+            app:destination="@id/placeDetailFragment" />
+    </fragment>
+
+</navigation>

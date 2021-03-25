@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.detail.PlaceDetailFragment">
+
+    <data>
+        <variable
+            name="place"
+            type="vinova.kane.touristguide.vo.Place" />
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.detail.PlaceDetailFragment" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <FrameLayout
+                android:id="@+id/frame_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:src="@drawable/no_photo"
+                    android:id="@+id/iv_cover_photo"
+                    app:loadImage="@{place.images[0]}"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"/>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_marginEnd="@dimen/distance_8"
+                    android:backgroundTint="@color/dorado"
+                    android:id="@+id/cvPhotoNumber"
+                    android:layout_gravity="end|bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:id="@+id/tvSlideIndex"
+                        android:padding="@dimen/distance_8"
+                        android:textColor="@color/white"
+                        tools:text="1/5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fabMap"
+                    android:onClick="@{fragment::onClick}"
+                    android:layout_marginEnd="@dimen/distance_8"
+                    android:layout_marginTop="@dimen/distance_8"
+                    app:fabCustomSize="30dp"
+                    android:layout_gravity="end|top"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:backgroundTint="@color/dorado"
+                    android:contentDescription="@string/location"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_location"
+                    android:tint="@color/white"/>
+            </FrameLayout>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:backgroundTint="@color/dorado"
+                android:tint="@color/white"
+                app:fabCustomSize="30dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:onClick="@{fragment::onClick}"
+                android:id="@+id/iv_back"
+                android:layout_marginStart="@dimen/distance_8"
+                android:layout_marginTop="@dimen/distance_8"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/back" />
+
+            <TextView
+                tools:text="Hồ Chí Minh City"
+                android:maxLines="2"
+                android:id="@+id/tv_place_detail_name"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/distance_16"
+                android:layout_marginTop="@dimen/distance_8"
+                android:text="@{place.name}"
+                android:textSize="@dimen/text_size_18"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/frame_layout"/>
+
+            <androidx.appcompat.widget.AppCompatRatingBar
+                android:layout_marginStart="@dimen/distance_16"
+                android:id="@+id/rating_bar_detail"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/distance_8"
+                android:numStars="5"
+                android:progressTint="@color/ronchi"
+                android:rating="@{place.score/2}"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/tv_place_detail_name"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.av.verticalchipgroup.CustomChipGroup
+                android:id="@+id/verticalChipGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rating_bar_detail"/>
+
+            <LinearLayout
+                android:layout_marginTop="@dimen/distance_8"
+                android:onClick="@{fragment::onClick}"
+                android:id="@+id/ll_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/verticalChipGroup">
+
+                <TextView
+                    android:visibility="gone"
+                    android:id="@+id/tv_description_show"
+                    style="@style/TextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/distance_16"
+                    android:paddingTop="@dimen/distance_16"
+                    android:paddingEnd="@dimen/distance_8"
+                    android:text="@string/introduction"
+                    app:drawableEndCompat="@drawable/ic_baseline_keyboard_arrow_down_24" />
+
+                <TextView
+                    android:visibility="visible"
+                    android:id="@+id/tv_description_hide"
+                    style="@style/TextViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/distance_16"
+                    android:paddingTop="@dimen/distance_16"
+                    android:paddingEnd="@dimen/distance_8"
+                    android:text="@string/introduction"
+                    app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/distance_32"
+                    android:layout_marginEnd="@dimen/distance_32"
+                    android:fontFamily="@font/raleway"
+                    android:paddingTop="@dimen/distance_4"
+                    android:text="@{place.intro}"
+                    android:textAlignment="center"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_line1"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="@dimen/distance_16"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_description" />
+
+            <TextView
+                android:onClick="@{fragment::onClick}"
+                android:id="@+id/tv_wikipedia"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/distance_16"
+                android:paddingTop="@dimen/distance_16"
+                android:paddingEnd="@dimen/distance_8"
+                android:paddingBottom="@dimen/distance_16"
+                android:text="@string/wikipedia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_line1"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+            <View
+                android:id="@+id/view_line2"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:background="@color/silver"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_wikipedia" />
+
+            <TextView
+                android:onClick="@{fragment::onClick}"
+                android:id="@+id/tv_feedback"
+                style="@style/TextViewStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/distance_16"
+                android:paddingTop="@dimen/distance_16"
+                android:paddingEnd="@dimen/distance_8"
+                android:paddingBottom="@dimen/distance_16"
+                android:text="@string/feedback"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_line2"
+                app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios_24" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</layout>

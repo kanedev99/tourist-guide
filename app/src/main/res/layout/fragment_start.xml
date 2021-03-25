@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="fragment"
+            type="vinova.kane.touristguide.ui.auth.StartFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.auth.AuthActivity">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_logo"
+            android:background="@drawable/logo_app"
+            android:layout_marginStart="@dimen/distance_16"
+            android:layout_marginEnd="@dimen/distance_16"
+            android:layout_marginTop="@dimen/distance_xxxlarge_32"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            android:onClick="@{fragment::initEvent}"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:fontFamily="@font/raleway"
+            android:background="@color/dorado"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/distance_xxxlarge_32"
+            android:layout_marginHorizontal="@dimen/distance_xxxlarge_32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnRegister"
+            android:onClick="@{fragment::initEvent}"
+            android:text="@string/register"
+            android:textAllCaps="false"
+            android:fontFamily="@font/raleway"
+            android:background="@color/dorado"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/distance_xxxlarge_32"
+            android:layout_marginHorizontal="@dimen/distance_xxxlarge_32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnExit"
+            android:onClick="@{fragment::initEvent}"
+            android:text="@string/exit_app"
+            android:textAllCaps="false"
+            android:fontFamily="@font/raleway"
+            android:background="@color/dorado"
+            android:textColor="@color/white"
+            android:layout_marginTop="@dimen/distance_xxxlarge_32"
+            android:layout_marginHorizontal="@dimen/distance_xxxlarge_32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnRegister"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
